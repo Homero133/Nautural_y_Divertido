@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPPO Reno16 - Natural y Divertido</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Pastel Palette */
+            --primary-color: #ffc2d1; /* Pastel Pink */
+            --secondary-color: #bde0fe; /* Pastel Blue */
+            --accent-color: #a2d2ff; /* Deeper Pastel Blue */
+            --text-dark: #4a4e69; /* Soft Dark Muted Purple/Blue */
+            --text-light: #f2e9e4;
+            --bg-color: #f8edeb; /* Light Pastel Peach/Pink background */
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8edeb 0%, #ffc2d1 100%);
+        }
+
+        .hero-shapes .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 1;
+        }
+
+        .shape-1 {
+            width: 500px;
+            height: 500px;
+            background: var(--secondary-color);
+            top: -100px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 450px;
+            height: 450px;
+            background: var(--accent-color);
+            bottom: -150px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 50px;
+            background: var(--glass-bg);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: var(--shadow);
+            width: 90vw;
+            max-width: 800px;
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(162, 210, 255, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            background: -webkit-linear-gradient(45deg, #4a4e69, #a2d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #4a4e69;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--text-dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            background-color: #22223b;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #9a8c98;
+            margin-bottom: 60px;
+        }
+
+        /* PILAR 1: NATURAL */
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .split-layout {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .split-layout.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .split-text {
+            flex: 1;
+        }
+
+        .split-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .split-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #4a4e69;
+        }
+
+        .split-text ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .split-text ul li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .split-text ul li i {
+            color: var(--accent-color);
+            margin-right: 15px;
+            font-size: 1.3rem;
+        }
+
+        .split-media {
+            flex: 1;
+            position: relative;
+        }
+
+        .split-media img, .split-media video {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 5px solid white;
+        }
+
+        .quote-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            font-style: italic;
+            color: #9a8c98;
+        }
+
+        /* FEATURE CARDS (Divertido) */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+        }
+
+        .feature-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #9a8c98;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .feature-media-small {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* FLIP CARDS (Roleplay) */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            height: 400px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border: 2px solid white;
+        }
+
+        .flip-card-front {
+            background: linear-gradient(135deg, white 0%, #fff0f3 100%);
+            color: var(--text-dark);
+        }
+
+        .flip-card-back {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .flip-card-back .card-icon {
+            color: white;
+        }
+
+        .badge-profile {
+            position: absolute;
+            top: 20px;
+            background-color: var(--text-dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .flip-hint {
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: #9a8c98;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .touch-and-try {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 1px solid rgba(255,255,255,0.4);
+            font-size: 0.95rem;
+        }
+
+        /* EVALUATION SECTION */
+        .evaluation-section {
+            background-color: white;
+            text-align: center;
+            border-radius: 30px 30px 0 0;
+            padding: 80px 0;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.02);
+        }
+
+        .qr-container {
+            background: #f8edeb;
+            padding: 40px;
+            border-radius: 20px;
+            display: inline-block;
+            border: 2px dashed var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        #qr-code {
+            display: none;
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .qr-placeholder-text {
+            font-size: 1.1rem;
+            color: #9a8c98;
+            padding: 50px 20px;
+        }
+        /* SALES TIP STYLES */
+        .tip-box {
+            display: none;
+            background: linear-gradient(135deg, #ffffff 0%, #fff0f3 100%);
+            border-left: 6px solid var(--primary-color);
+            padding: 25px 30px;
+            border-radius: 15px;
+            margin: 25px auto 0;
+            max-width: 700px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: left;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            animation: fadeIn 0.4s ease-out;
+        }
+        .tip-box p {
+            margin-bottom: 15px;
+        }
+        .tip-box p:last-child {
+            margin-bottom: 0;
+        }
+        .tip-box strong {
+            color: var(--accent-color);
+        }
+        .btn-secondary {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: white;
+            color: var(--text-dark);
+            border: 2px solid var(--text-dark);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+        .btn-secondary:hover {
+            background-color: var(--text-dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .split-layout, .split-layout.reverse {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* VIDEO MODAL & WRAPPER */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            height: 500px;
+            margin: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 3px solid white;
+            background: #000;
+        }
+        .video-wrapper video, .video-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .sound-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.8);
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+            opacity: 0; /* Hidden by default */
+        }
+        .video-wrapper:hover .sound-btn {
+            opacity: 1; /* Show on hover */
+            background: rgba(0,0,0,0.85);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed !important;
+            z-index: 99999 !important;
+            left: 0 !important;
+            top: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            margin: 0;
+            padding: 0;
+        }
+        .modal-content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+        }
+        #modalVideo {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            border: 3px solid white;
+            background: black;
+        }
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100000;
+        }
+        .modal-close:hover {
+            color: var(--text-dark);
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="hero-content">
+            <span class="badge">Cápsula de Entrenamiento</span>
+            <h1>OPPO Reno16</h1>
+            <p><strong>Natural y Divertido:</strong> El Camino del Consultor Experto</p>
+            <a href="#pilar1" class="btn-primary">Iniciar Recorrido <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </header>
+
+    <!-- PILAR 1: NATURAL -->
+    <section id="pilar1" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Pilar 1: Natural</h2>
+            <p class="section-subtitle">La belleza de lo real</p>
+
+            <div class="split-layout">
+                <div class="split-media">
+                    <img src="assets/images/Natural.jpeg" alt="Fotografía Natural sin filtros agresivos">
+                </div>
+                <div class="split-text">
+                    <h3>Menos filtro, más tú.</h3>
+                    <p>Se acabaron los rostros empastados, los tonos de piel "lavados" o el efecto muñeca de porcelana. El Reno16 prioriza una calibración de color precisa.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>No maquilla, resalta:</strong> Corrige sombras y luces respetando poros y lunares.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Colorimetría consistente:</strong> Tonos cálidos y fríos fieles a la vista.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Listo para compartir:</strong> Sin necesidad de edición pesada.</li>
+                    </ul>
+                    <div class="quote-box">
+                        «¿Te ha pasado que te tomas una foto y tu tono de piel parece de cera? Con el Reno16 eso no pasa; su procesamiento respeta tu textura real.»
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSICIÓN: NITIDEZ EXCEPCIONAL -->
+    <section class="section-padding" style="background-color: var(--bg-color);">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-text">
+                    <h2 class="section-title" style="text-align: left;">Nitidez Excepcional</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: #4a4e69;">Cada detalle capturado con precisión milimétrica. La óptica avanzada del Reno16 garantiza que tus recuerdos se conserven con una claridad asombrosa, preparándote para llevar tu creatividad al siguiente nivel.</p>
+                </div>
+                <div class="split-media">
+                    <img src="assets/images/Nitidez exceocional.jpeg" alt="Nitidez Excepcional">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILAR 2: DIVERTIDO -->
+    <section id="pilar2" class="section-padding" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">Pilar 2: Divertido</h2>
+            <p class="section-subtitle">Crea sin limites</p>
+
+            <div class="intro-block" style="text-align: center; max-width: 900px; margin: 0 auto 50px auto; color: #4a4e69; font-size: 1.1rem; line-height: 1.7; padding: 20px; border-left: 5px solid var(--secondary-color); background: var(--bg-color); border-radius: 15px;">
+                <p>La búsqueda de la excelencia en imagen va más allá de solo capturar. Detrás de cada fotograma perfecto, está el deseo de expresar ideas y mostrar tu verdadera personalidad de una manera más atractiva, única y creativa. Dado que la postproducción es vital hoy en día, la serie Reno16 lleva esto al siguiente nivel con funciones de IA que hacen la creación mucho más vívida.</p>
+            </div>
+
+            <div class="split-layout reverse" style="margin-bottom: 80px;">
+                <div class="split-media">
+                    <img src="assets/images/kenia os.jpg" alt="Kenia Os">
+                </div>
+                <div class="split-text">
+                    <h3>El poder de la influencia</h3>
+                    <p>Crear para redes sociales (TikTok, Instagram) no tiene por qué ser abrumador ni requerir tres aplicaciones externas. El Reno16 integra herramientas nativas de inteligencia y edición express.</p>
+                    <div class="quote-box">
+                        «Si sigues a creadores con millones de views como Kenia Os, sabes que la clave es el dinamismo. Reno16 viene diseñado para que armes contenido llamativo en dos toques.»
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pop-Out Section -->
+            <div style="text-align: center; margin-bottom: 80px; padding: 40px; background: var(--bg-color); border-radius: 20px;">
+                <div class="feature-icon" style="margin: 0 auto 20px;"><i class="fas fa-magic"></i></div>
+                <h3 style="font-size: 2rem; margin-bottom: 15px; color: var(--text-dark);">Pop-Out 2.0</h3>
+                <p style="color: #4a4e69; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Aísla personas u objetos al vuelo con un toque sostenido. Úsalos como stickers, portadas o composiciones limpias en segundos.</p>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 30px;">
+                    <div class="video-wrapper">
+                        <video src="assets/videos/popout asset 1.mp4" autoplay loop muted playsinline></video>
+                        <button class="sound-btn" onclick="openModal('assets/videos/popout asset 1.mp4')"><i class="fas fa-volume-up"></i> Reproducir video</button>
+                    </div>
+                    <div class="video-wrapper">
+                        <img src="assets/images/popout asset 2.jpeg" alt="Pop-Out">
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+                    <button onclick="openModal('assets/videos/tutorial popout.mp4')" class="btn-primary" style="cursor: pointer;"><i class="fas fa-play-circle"></i> Ver Tutorial</button>
+                    <button onclick="toggleTip('tip-popout')" class="btn-secondary"><i class="fas fa-lightbulb"></i> Tip de Venta</button>
+                </div>
+                
+                <div id="tip-popout" class="tip-box">
+                    <p><em>«¿Te ha pasado que tomas una foto increíble, pero al subirla a redes se ve como una más del montón?»</em></p>
+                    <p>«Con el OPPO Reno16 y su exclusiva función <strong>Popout 2.0</strong>, la IA detecta automáticamente a la persona o mascota y la saca del encuadre en 3D en un segundo. Sin recortar a mano ni usar apps externas; el sujeto rompe los márgenes dándole un efecto de portada de revista que resalta al instante.»</p>
+                </div>
+            </div>
+
+            <!-- Collage Remix Section -->
+            <div style="text-align: center; margin-bottom: 40px; padding: 40px; background: linear-gradient(135deg, #f8edeb 0%, #bde0fe 100%); border-radius: 20px;">
+                <div class="feature-icon" style="margin: 0 auto 20px; background: var(--accent-color);"><i class="fas fa-border-all"></i></div>
+                <h3 style="font-size: 2rem; margin-bottom: 15px; color: var(--text-dark);">Collage Remix</h3>
+                <p style="color: #4a4e69; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Combina fotos de un mismo momento con layouts modernos directamente desde la galería, logrando la estética global de BABYMONSTER.</p>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 30px;">
+                    <div class="video-wrapper">
+                        <video src="assets/videos/babymonster collage remix 1.mp4" autoplay loop muted playsinline></video>
+                        <button class="sound-btn" onclick="openModal('assets/videos/babymonster collage remix 1.mp4')"><i class="fas fa-volume-up"></i> Reproducir video</button>
+                    </div>
+                    <div class="video-wrapper">
+                        <video src="assets/videos/babymonster collage remix 2.mp4" autoplay loop muted playsinline></video>
+                        <button class="sound-btn" onclick="openModal('assets/videos/babymonster collage remix 2.mp4')"><i class="fas fa-volume-up"></i> Reproducir video</button>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+                    <button onclick="openModal('assets/videos/tutorial collage remix.mp4')" class="btn-primary" style="cursor: pointer;"><i class="fas fa-play-circle"></i> Ver Tutorial</button>
+                    <button onclick="toggleTip('tip-collage')" class="btn-secondary"><i class="fas fa-lightbulb"></i> Tip de Venta</button>
+                </div>
+
+                <div id="tip-collage" class="tip-box">
+                    <p><em>«Si te gusta compartir contenido moderno, sabes lo pesado que es usar una app para recortar, otra para juntar videos y otra para el texto...»</em></p>
+                    <p>«El Reno16 resuelve todo tu flujo creativo desde la galería con <strong>Collage Remix</strong>. Su inteligencia artificial fusiona fotogramas para que los recortes, incluso en movimiento, sean perfectos. Seleccionas, recortas, mezclas y dibujas directamente en la pantalla.»</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EVALUACIÓN (QR) -->
+    <section class="evaluation-section">
+        <div class="container">
+            <h2 class="section-title">Evaluación de la Cápsula</h2>
+            <p class="section-subtitle">Demuestra tu colmillo comercial. Escanea el código para registrar tu asistencia.</p>
+            
+            <div class="qr-container">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSfBT2NG9xos702bInyYViKkMmgCG5GHRkrTCvoC_LZqUi3pQw%2Fviewform%3Fusp%3Dpublish-editor" alt="Código QR del Formulario" style="width: 250px; height: 250px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: block;">
+            </div>
+            <br>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfBT2NG9xos702bInyYViKkMmgCG5GHRkrTCvoC_LZqUi3pQw/viewform?usp=publish-editor" target="_blank" class="btn-primary">Abrir Formulario en Navegador <i class="fas fa-external-link-alt"></i></a>
+        </div>
+    </section>
+
+    <!-- VIDEO MODAL -->
+    <div id="videoModal" class="modal">
+        <span class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i> Cerrar</span>
+        <div class="modal-content-wrapper">
+            <video id="modalVideo" src="" controls playsinline></video>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Tip Logic
+        function toggleTip(id) {
+            const tipBox = document.getElementById(id);
+            if (tipBox.style.display === "block") {
+                tipBox.style.display = "none";
+            } else {
+                tipBox.style.display = "block";
+            }
+        }
+
+        // Modal Logic
+        function openModal(videoSrc) {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            video.src = videoSrc;
+            modal.style.display = 'block';
+            video.play();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('modalVideo');
+            video.pause();
+            video.src = "";
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
