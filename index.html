@@ -476,6 +476,57 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* TOOLTIP STYLES */
+        .tooltip-text {
+            position: relative;
+            cursor: help;
+            border-bottom: 2px dotted var(--primary-color);
+            transition: color 0.3s;
+        }
+        .tooltip-text:hover {
+            color: var(--primary-color);
+        }
+        .tooltip-text::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background-color: var(--text-dark);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: normal;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 100;
+            font-weight: normal;
+            line-height: 1.4;
+        }
+        .tooltip-text::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            border-width: 8px;
+            border-style: solid;
+            border-color: var(--text-dark) transparent transparent transparent;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 100;
+        }
+        .tooltip-text:hover::after, .tooltip-text:hover::before {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
@@ -616,7 +667,7 @@
                     <p>Se acabaron los rostros empastados, los tonos de piel "lavados" o el efecto muñeca de porcelana. El Reno16 prioriza una calibración de color precisa.</p>
                     <ul>
                         <li><i class="fas fa-check-circle"></i> <strong>No maquilla, resalta:</strong> Corrige sombras y luces respetando poros y lunares.</li>
-                        <li><i class="fas fa-check-circle"></i> <strong>Colorimetría consistente:</strong> Tonos cálidos y fríos fieles a la vista.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong><span class="tooltip-text" data-tooltip="Ciencia que mide y procesa el color para asegurar que los tonos capturados por la cámara sean exactos, naturales y fieles a la realidad.">Colorimetría</span> consistente:</strong> Tonos cálidos y fríos fieles a la vista.</li>
                         <li><i class="fas fa-check-circle"></i> <strong>Listo para compartir:</strong> Sin necesidad de edición pesada.</li>
                     </ul>
                     <div class="quote-box">
